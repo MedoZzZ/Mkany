@@ -1,0 +1,399 @@
+/* ==========================================================================
+   MKANY ERP — Shell Page Stylesheet
+   Implements design-tokens-shell.md
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   CSS Custom Properties (Shell Tokens)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Colors — Base */
+  --sh-bg: #F8F9FA;
+  --sh-surface: #FFFFFF;
+  --sh-border: #E2E5E9;
+  --sh-border-hover: #CDD1D6;
+  --sh-brand: #0B1B2B;
+  --sh-brand-accent: #E6AC00;
+
+  /* Colors — Text */
+  --sh-text: #1A1A1A;
+  --sh-text-secondary: #5A6B7C;
+  --sh-text-greeting: #0B1B2B;
+  --sh-text-placeholder: #8B95A1;
+
+  /* Colors — Card Accents (from sub-system tokens) */
+  --sh-card-re-accent: #0070D2;
+  --sh-card-re-bg: #EBF5FF;
+  --sh-card-le-accent: #393939;
+  --sh-card-le-bg: #F4F4F4;
+  --sh-card-ag-accent: #00897B;
+  --sh-card-ag-bg: #E0F2F1;
+
+  /* Typography */
+  --font-arabic: 'Cairo', 'Segoe UI', Tahoma, sans-serif;
+  --font-latin: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  --font-display: 'Syne', 'Cairo', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Consolas', monospace;
+
+  /* Spacing */
+  --sh-space-2: 8px;
+  --sh-space-3: 12px;
+  --sh-space-4: 16px;
+  --sh-space-5: 24px;
+  --sh-space-6: 32px;
+  --sh-space-8: 48px;
+  --sh-space-12: 64px;
+
+  /* Radius */
+  --sh-radius-sm: 4px;
+  --sh-radius-md: 8px;
+  --sh-radius-icon: 12px;
+  --sh-radius-full: 9999px;
+
+  /* Shadows */
+  --sh-shadow-search: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --sh-shadow-search-focus: 0 2px 8px rgba(0, 0, 0, 0.12);
+  --sh-shadow-card-hover: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+  /* Motion */
+  --sh-duration-fast: 100ms;
+  --sh-duration-normal: 200ms;
+  --sh-easing: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Density */
+  --sh-search-height: 48px;
+  --sh-card-icon-size: 48px;
+  --sh-card-padding: 20px;
+  --sh-card-gap: 24px;
+  --sh-content-max-width: 640px;
+}
+
+
+/* --------------------------------------------------------------------------
+   Reset & Base
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-arabic);
+  color: var(--sh-text);
+  background-color: var(--sh-bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.7; /* Arabic line-height per constitution */
+}
+
+/* LTR override: tighten line-height for Latin content */
+[dir="ltr"] body {
+  line-height: 1.5;
+}
+
+
+/* --------------------------------------------------------------------------
+   Header — Quiet, borderless, brand mark + user info
+   -------------------------------------------------------------------------- */
+.shell-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: var(--sh-bg);
+  /* No border-bottom — "quiet/borderless" per spec */
+}
+
+.shell-header-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: var(--sh-space-4) var(--sh-space-5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.shell-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--sh-space-2);
+}
+
+.shell-brand-mark {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--sh-brand);
+  letter-spacing: 0.04em;
+  /* Latin text in brand mark: force LTR */
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+.shell-user {
+  display: flex;
+  align-items: center;
+  gap: var(--sh-space-3);
+}
+
+.shell-user-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--sh-text-secondary);
+}
+
+.shell-user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--sh-radius-full);
+  background-color: var(--sh-brand);
+  color: #FFFFFF;
+  font-family: var(--font-arabic);
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+
+/* --------------------------------------------------------------------------
+   Main Content — Centered, vertically balanced
+   -------------------------------------------------------------------------- */
+.shell-main {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--sh-space-12) var(--sh-space-5) var(--sh-space-8);
+}
+
+.shell-content {
+  width: 100%;
+  max-width: var(--sh-content-max-width);
+}
+
+
+/* --------------------------------------------------------------------------
+   Greeting
+   -------------------------------------------------------------------------- */
+.shell-greeting {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 28px;
+  color: var(--sh-text-greeting);
+  margin-bottom: var(--sh-space-6);
+  line-height: 1.4;
+}
+
+
+/* --------------------------------------------------------------------------
+   Search Bar — Command palette style
+   -------------------------------------------------------------------------- */
+.shell-search-wrapper {
+  margin-bottom: var(--sh-space-8);
+}
+
+.shell-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: var(--sh-surface);
+  border: 1px solid var(--sh-border);
+  border-radius: var(--sh-radius-md);
+  height: var(--sh-search-height);
+  padding: 0 var(--sh-space-4);
+  box-shadow: var(--sh-shadow-search);
+  transition:
+    border-color var(--sh-duration-fast) var(--sh-easing),
+    box-shadow var(--sh-duration-fast) var(--sh-easing);
+  gap: var(--sh-space-3);
+}
+
+.shell-search:focus-within {
+  border-color: var(--sh-brand);
+  box-shadow: var(--sh-shadow-search-focus);
+  outline: 2px solid var(--sh-brand-accent);
+  outline-offset: 1px;
+}
+
+.shell-search-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--sh-text-placeholder);
+  flex-shrink: 0;
+}
+
+.shell-search-input {
+  flex: 1;
+  height: 100%;
+  border: none;
+  background: none;
+  font-family: var(--font-arabic);
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--sh-text);
+  outline: none;
+  line-height: 1.7;
+}
+
+.shell-search-input::placeholder {
+  color: var(--sh-text-placeholder);
+}
+
+/* RTL: search icon on right, kbd on left — this is natural with flex + dir=rtl */
+
+.shell-search-kbd {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--sh-text-placeholder);
+  background-color: var(--sh-bg);
+  border: 1px solid var(--sh-border);
+  border-radius: var(--sh-radius-sm);
+  padding: 2px 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  /* Latin text: force LTR */
+  direction: ltr;
+  unicode-bidi: isolate;
+  user-select: none;
+  line-height: 1.5;
+}
+
+
+/* --------------------------------------------------------------------------
+   Project Cards Grid
+   -------------------------------------------------------------------------- */
+.shell-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sh-card-gap);
+}
+
+.shell-card {
+  display: flex;
+  align-items: center;
+  gap: var(--sh-space-4);
+  padding: var(--sh-card-padding);
+  border-radius: var(--sh-radius-md);
+  text-decoration: none;
+  color: inherit;
+  /* Default: quiet/transparent — no background, no border */
+  background-color: transparent;
+  border: 1px solid transparent;
+  transition:
+    background-color var(--sh-duration-normal) var(--sh-easing),
+    border-color var(--sh-duration-normal) var(--sh-easing),
+    box-shadow var(--sh-duration-normal) var(--sh-easing);
+  cursor: pointer;
+}
+
+.shell-card:hover {
+  background-color: var(--sh-surface);
+  border-color: var(--sh-border);
+  box-shadow: var(--sh-shadow-card-hover);
+}
+
+.shell-card:focus-visible {
+  outline: 2px solid var(--sh-brand);
+  outline-offset: 2px;
+  background-color: var(--sh-surface);
+  border-color: var(--sh-border);
+}
+
+.shell-card:active {
+  background-color: var(--sh-bg);
+}
+
+
+/* --------------------------------------------------------------------------
+   Card Icon — Tinted rounded square
+   -------------------------------------------------------------------------- */
+.shell-card-icon {
+  width: var(--sh-card-icon-size);
+  height: var(--sh-card-icon-size);
+  border-radius: var(--sh-radius-icon);
+  background-color: var(--card-bg);
+  color: var(--card-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.shell-card-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+
+/* --------------------------------------------------------------------------
+   Card Content
+   -------------------------------------------------------------------------- */
+.shell-card-content {
+  min-width: 0; /* Prevent flex overflow */
+}
+
+.shell-card-title {
+  font-family: var(--font-arabic);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--sh-text);
+  margin-bottom: 2px;
+  line-height: 1.7;
+}
+
+.shell-card-desc {
+  font-family: var(--font-arabic);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--sh-text-secondary);
+  line-height: 1.7;
+}
+
+
+/* --------------------------------------------------------------------------
+   Responsive — Mobile adjustments
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .shell-main {
+    padding-top: var(--sh-space-8);
+  }
+
+  .shell-greeting {
+    font-size: 24px;
+  }
+
+  .shell-search-kbd {
+    display: none; /* Hide keyboard shortcut on touch devices */
+  }
+
+  .shell-card {
+    padding: var(--sh-space-4);
+  }
+
+  .shell-card-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .shell-card-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .shell-header-inner {
+    padding: var(--sh-space-3) var(--sh-space-4);
+  }
+}

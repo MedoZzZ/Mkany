@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مشروع الواحة - قطاع العقارات | مكاني</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        /* Specific overrides for Project Detail Tabs */
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: var(--sp-8);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: var(--sp-4);
+        }
+        
+        .project-title-group h1 {
+            font-size: 2.2rem;
+            font-weight: 900;
+            margin-bottom: var(--sp-1);
+        }
+        
+        .project-title-group p {
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .tabs-nav {
+            display: flex;
+            gap: var(--sp-4);
+        }
+
+        .tab-btn {
+            background: none;
+            border: 1px solid var(--border-color);
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            cursor: pointer;
+            padding: var(--sp-2) var(--sp-6);
+            border-radius: var(--radius-sm);
+            transition: all 0.2s ease;
+            background-color: var(--bg-surface);
+            font-family: inherit;
+        }
+
+        .tab-btn:hover {
+            color: var(--brand-primary);
+            border-color: var(--brand-primary);
+        }
+
+        .tab-btn.active {
+            background-color: var(--brand-primary);
+            color: white;
+            border-color: var(--brand-primary);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Filter Bar */
+        .filter-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--bg-surface);
+            padding: var(--sp-4);
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+            margin-bottom: var(--sp-6);
+            box-shadow: var(--shadow-card);
+        }
+
+        .filter-selects {
+            display: flex;
+            gap: var(--sp-4);
+        }
+
+        .filter-select {
+            padding: var(--sp-2) var(--sp-4);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            font-weight: 600;
+            color: var(--text-main);
+            background-color: var(--bg-app);
+        }
+
+        .legend {
+            display: flex;
+            gap: var(--sp-4);
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: var(--sp-2);
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 4px;
+        }
+        .legend-dot.available { background-color: var(--status-avail); }
+        .legend-dot.reserved { background-color: var(--status-reserved); }
+        .legend-dot.sold { background-color: var(--status-sold); }
+
+    </style>
+</head>
+<body>
+
+    <!-- Top Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="logo-mark">ع</span>
+                <span class="logo-text">مكاني العقارية</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">لوحة القيادة</a>
+                <a href="#" class="nav-link active">المشاريع والوحدات</a>
+                <a href="#" class="nav-link">العملاء والعقود</a>
+                <a href="#" class="nav-link">الماليات والتحصيل</a>
+            </div>
+            <div class="nav-actions">
+                <div class="global-switcher">
+                    <button class="switcher-btn">
+                        <span class="switcher-icon">⊞</span>
+                        <span class="switcher-text">القطاعات</span>
+                    </button>
+                    <div class="switcher-dropdown">
+                        <a href="../hub/index.html" class="switcher-item">المركز الرئيسي</a>
+                        <a href="../agriculture/index.html" class="switcher-item">الزراعة الذكية</a>
+                        <a href="../real-estate/index.html" class="switcher-item">العقارات</a>
+                        <a href="../legal/index.html" class="switcher-item">الشؤون القانونية</a>
+                    </div>
+                </div>
+                <div class="user-avatar">م</div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="workspace">
+        
+        <!-- Breadcrumbs -->
+        <div class="breadcrumbs">
+            <a href="#" class="crumb-link">المشاريع العقارية</a>
+            <span class="crumb-separator">/</span>
+            <span class="crumb-current">مشروع الواحة</span>
+        </div>
+        
+        <!-- Project Header & Tabs -->
+        <section class="project-header">
+            <div class="project-title-group">
+                <h1>مشروع الواحة السكني</h1>
+                <p>المرحلة الثانية • التجمع الخامس</p>
+            </div>
+            
+            <div class="tabs-nav">
+                <button class="tab-btn" onclick="switchTab('analytics')">نظرة عامة والتحليلات</button>
+                <button class="tab-btn active" onclick="switchTab('inventory')">شبكة الوحدات المتاحة</button>
+            </div>
+        </section>
+
+        <!-- Tab A: Analytics -->
+        <section id="tab-analytics" class="tab-content">
+            <div class="stats-row">
+                <div class="stat-card">
+                    <div class="stat-header"><span class="stat-label">إجمالي المبيعات</span></div>
+                    <div class="stat-body"><span class="stat-value"><bdi>45,000,000</bdi> ج.م</span></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-header"><span class="stat-label">التحصيلات</span></div>
+                    <div class="stat-body"><span class="stat-value"><bdi>12,500,000</bdi> ج.م</span></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-header"><span class="stat-label">المتأخرات</span></div>
+                    <div class="stat-body"><span class="stat-value text-danger"><bdi>1,200,000</bdi> ج.م</span></div>
+                </div>
+            </div>
+
+            <div class="charts-row">
+                <div class="chart-box span-2">
+                    <h3 class="box-title">سرعة المبيعات (الربع الحالي)</h3>
+                    <div class="canvas-container">
+                        <canvas id="projectSalesChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-box">
+                    <h3 class="box-title">حالة مخزون المشروع</h3>
+                    <div class="canvas-container">
+                        <canvas id="projectStatusChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab B: Inventory Grid -->
+        <section id="tab-inventory" class="tab-content active">
+            
+            <div class="filter-bar">
+                <div class="filter-selects">
+                    <select class="filter-select">
+                        <option>جميع النماذج</option>
+                        <option>فيلا مستقلة</option>
+                        <option>توين هاوس</option>
+                    </select>
+                    <select class="filter-select">
+                        <option>حالة الوحدة (الكل)</option>
+                        <option>متاح</option>
+                        <option>محجوز</option>
+                        <option>مباع</option>
+                    </select>
+                </div>
+                
+                <div class="legend">
+                    <div class="legend-item"><span class="legend-dot available"></span> متاح</div>
+                    <div class="legend-item"><span class="legend-dot reserved"></span> محجوز</div>
+                    <div class="legend-item"><span class="legend-dot sold"></span> مباع</div>
+                </div>
+            </div>
+
+            <!-- The Grid - High Density Photo Cards -->
+            <div class="units-grid" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));">
+                
+                <!-- Unit Card: Sold -->
+                <a href="unit-detail.html" class="unit-card">
+                    <div class="unit-photo" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=400&q=80')">
+                        <span class="status-badge sold">مباع</span>
+                    </div>
+                    <div class="unit-details">
+                        <h4 class="unit-code"><bdi>V-102</bdi></h4>
+                        <p class="unit-specs">فيلا مستقلة • <bdi>350</bdi> م²</p>
+                        <div class="unit-price"><bdi>12,000,000</bdi> ج.م</div>
+                    </div>
+                </a>
+
+                <!-- Unit Card: Reserved -->
+                <a href="#" class="unit-card">
+                    <div class="unit-photo" style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=400&q=80')">
+                        <span class="status-badge reserved">محجوز</span>
+                    </div>
+                    <div class="unit-details">
+                        <h4 class="unit-code"><bdi>T-45</bdi></h4>
+                        <p class="unit-specs">توين هاوس • <bdi>220</bdi> م²</p>
+                        <div class="unit-price"><bdi>8,500,000</bdi> ج.م</div>
+                    </div>
+                </a>
+                
+                <!-- Unit Card: Available -->
+                <a href="#" class="unit-card">
+                    <div class="unit-photo" style="background-image: url('https://images.unsplash.com/photo-1600607687920-4e2a09be1587?auto=format&fit=crop&w=400&q=80')">
+                        <span class="status-badge available">متاح</span>
+                    </div>
+                    <div class="unit-details">
+                        <h4 class="unit-code"><bdi>V-105</bdi></h4>
+                        <p class="unit-specs">فيلا مستقلة • <bdi>350</bdi> م²</p>
+                        <div class="unit-price"><bdi>12,500,000</bdi> ج.م</div>
+                    </div>
+                </a>
+
+                <!-- Unit Card: Available -->
+                <a href="#" class="unit-card">
+                    <div class="unit-photo" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80')">
+                        <span class="status-badge available">متاح</span>
+                    </div>
+                    <div class="unit-details">
+                        <h4 class="unit-code"><bdi>T-46</bdi></h4>
+                        <p class="unit-specs">توين هاوس • <bdi>220</bdi> م²</p>
+                        <div class="unit-price"><bdi>8,500,000</bdi> ج.م</div>
+                    </div>
+                </a>
+
+                 <!-- Unit Card: Available -->
+                 <a href="#" class="unit-card">
+                    <div class="unit-photo" style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=400&q=80')">
+                        <span class="status-badge available">متاح</span>
+                    </div>
+                    <div class="unit-details">
+                        <h4 class="unit-code"><bdi>T-47</bdi></h4>
+                        <p class="unit-specs">توين هاوس • <bdi>220</bdi> م²</p>
+                        <div class="unit-price"><bdi>8,600,000</bdi> ج.م</div>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Tab Switcher
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            const target = document.getElementById('tab-' + tabId);
+            target.classList.add('active');
+        }
+
+        // Charts Init
+        Chart.defaults.font.family = "'Cairo', sans-serif";
+        Chart.defaults.color = '#78716C'; 
+
+        // Sales Velocity Bar Chart
+        const pSalesCtx = document.getElementById('projectSalesChart').getContext('2d');
+        new Chart(pSalesCtx, {
+            type: 'bar',
+            data: {
+                labels: ['أغسطس', 'سبتمبر', 'أكتوبر'],
+                datasets: [
+                    {
+                        label: 'مبيعات محققة',
+                        data: [5, 8, 3],
+                        backgroundColor: '#C84B31', 
+                        borderRadius: 4
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { beginAtZero: true, grid: { color: '#E7E5E4' }, ticks: { stepSize: 2 } },
+                    x: { grid: { display: false } }
+                }
+            }
+        });
+
+        // Inventory Status Donut
+        const pStatusCtx = document.getElementById('projectStatusChart').getContext('2d');
+        new Chart(pStatusCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['متاح', 'محجوز', 'مباع'],
+                datasets: [{
+                    data: [15, 4, 21],
+                    backgroundColor: [
+                        '#4D7C5F', 
+                        '#D97706', 
+                        '#78716C'  
+                    ],
+                    borderWidth: 2,
+                    borderColor: '#FFFFFF'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '65%',
+                plugins: {
+                    legend: { rtl: true, position: 'bottom' }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

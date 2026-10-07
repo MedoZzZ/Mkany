@@ -1,0 +1,419 @@
+/* 
+   MKANY ERP - Hub Redesign
+   Aesthetic: Corporate Fintech (Neutral, High-Data Density, Deep Royal Blue)
+*/
+
+:root {
+    /* Colors */
+    --bg-app: #F8FAFC; /* Slate 50 */
+    --bg-surface: #FFFFFF;
+    --bg-navbar: #0F172A; /* Deep Dark Slate */
+    
+    --text-main: #1E293B; /* Slate 800 */
+    --text-muted: #64748B; /* Slate 500 */
+    --text-nav: #CBD5E1;
+    
+    --brand-primary: #1E3A8A; /* Royal Blue */
+    --brand-secondary: #3B82F6; /* Blue 500 */
+    
+    /* Trends */
+    --trend-up: #16A34A; /* Green 600 */
+    --trend-up-bg: #DCFCE7;
+    --trend-down: #DC2626; /* Red 600 */
+    --trend-down-bg: #FEE2E2;
+
+    /* Spacing */
+    --sp-1: 0.25rem;
+    --sp-2: 0.5rem;
+    --sp-3: 0.75rem;
+    --sp-4: 1rem;
+    --sp-6: 1.5rem;
+    --sp-8: 2rem;
+    --sp-12: 3rem;
+
+    /* Structure */
+    --radius: 8px;
+    --radius-lg: 12px;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: var(--bg-app);
+    color: var(--text-main);
+    direction: rtl;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Layout */
+.app-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Top Navbar */
+.hub-navbar {
+    background-color: var(--bg-navbar);
+    color: var(--text-nav);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-sm);
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--sp-6);
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-section {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-3);
+}
+
+.brand-logo {
+    width: 32px;
+    height: 32px;
+    background-color: var(--brand-secondary);
+    color: white;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+}
+
+.brand-text {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    gap: var(--sp-6);
+}
+
+.nav-item {
+    color: var(--text-nav);
+    font-weight: 600;
+    padding: var(--sp-2) 0;
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+.nav-item:hover {
+    color: white;
+}
+
+.nav-item.active {
+    color: white;
+}
+
+.nav-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: -15px; /* Aligns with bottom of navbar */
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: var(--brand-secondary);
+    border-radius: 3px 3px 0 0;
+}
+
+.user-card {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-3);
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.user-name {
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.user-role {
+    font-size: 0.75rem;
+}
+
+.user-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: var(--brand-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+}
+
+/* Main Content */
+.main-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    padding: var(--sp-8) var(--sp-6);
+    flex-grow: 1;
+}
+
+.hub-header {
+    margin-bottom: var(--sp-8);
+}
+
+.hub-header h2 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--text-main);
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-top: var(--sp-1);
+}
+
+/* The Core Switcher: Portals Grid */
+.portals-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--sp-6);
+    margin-bottom: var(--sp-8);
+}
+
+.portal-card {
+    background-color: var(--bg-surface);
+    border: 1px solid #E2E8F0;
+    border-radius: var(--radius-lg);
+    padding: var(--sp-6);
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    position: relative;
+    overflow: hidden;
+    min-height: 200px;
+}
+
+.portal-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: var(--brand-primary);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.portal-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border-color: var(--brand-primary);
+}
+
+.portal-card:hover::before {
+    transform: scaleX(1);
+}
+
+.portal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--sp-4);
+}
+
+.portal-number {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--brand-secondary);
+    background-color: rgba(59, 130, 246, 0.1);
+    padding: 2px 10px;
+    border-radius: 12px;
+}
+
+.portal-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-main);
+}
+
+.portal-desc {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    flex-grow: 1;
+}
+
+.portal-action {
+    margin-top: var(--sp-6);
+    font-weight: 800;
+    color: var(--brand-primary);
+    display: flex;
+    align-items: center;
+    gap: var(--sp-2);
+}
+
+.portal-card:hover .portal-action {
+    color: var(--brand-secondary);
+}
+
+/* Section Divider */
+.section-divider {
+    border: none;
+    border-top: 1px solid #E2E8F0;
+    margin: var(--sp-8) 0;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-6);
+    margin-bottom: var(--sp-8);
+}
+
+.stat-card {
+    background-color: var(--bg-surface);
+    padding: var(--sp-6);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid #E2E8F0;
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-title {
+    font-size: 1rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-bottom: var(--sp-2);
+}
+
+.stat-value {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: var(--sp-4);
+}
+
+.stat-trend {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-2);
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    align-self: flex-start;
+}
+
+.trend-up { background-color: var(--trend-up-bg); color: var(--trend-up); }
+.trend-down { background-color: var(--trend-down-bg); color: var(--trend-down); }
+
+/* Charts */
+.charts-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--sp-6);
+}
+
+.chart-card {
+    background-color: var(--bg-surface);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid #E2E8F0;
+    padding: var(--sp-6);
+    display: flex;
+    flex-direction: column;
+}
+
+.chart-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: var(--sp-6);
+}
+
+/* Global Switcher */
+.global-switcher {
+    position: relative;
+    margin-right: var(--sp-6);
+    display: inline-block;
+}
+.switcher-btn {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: var(--sp-2) var(--sp-4);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    gap: var(--sp-2);
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 700;
+    transition: all 0.2s;
+}
+.switcher-btn:hover, .switcher-btn:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.switcher-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: var(--sp-2);
+    background-color: var(--bg-surface);
+    border: 1px solid #E2E8F0;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    min-width: 220px;
+    z-index: 1000;
+    overflow: hidden;
+}
+.global-switcher:hover .switcher-dropdown, .global-switcher:focus-within .switcher-dropdown {
+    display: block;
+}
+.switcher-item {
+    display: block;
+    padding: var(--sp-3) var(--sp-4);
+    color: var(--text-main);
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 1px solid #E2E8F0;
+    transition: background-color 0.2s;
+}
+.switcher-item:last-child {
+    border-bottom: none;
+}
+.switcher-item:hover {
+    background-color: var(--bg-app);
+    color: var(--brand-primary);
+}

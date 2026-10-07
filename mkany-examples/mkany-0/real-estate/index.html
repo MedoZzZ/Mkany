@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مكاني | إدارة العقارات</title>
+    
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Top Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="logo-mark">ع</span>
+                <span class="logo-text">مكاني العقارية</span>
+            </div>
+            
+            <div class="nav-links">
+                <a href="#" class="nav-link active">لوحة القيادة</a>
+                <a href="#" class="nav-link">المشاريع والوحدات</a>
+                <a href="#" class="nav-link">العملاء والعقود</a>
+                <a href="#" class="nav-link">الماليات والتحصيل</a>
+            </div>
+            
+            <div class="nav-actions">
+                <div class="global-switcher">
+                    <button class="switcher-btn">
+                        <span class="switcher-icon">⊞</span>
+                        <span class="switcher-text">القطاعات</span>
+                    </button>
+                    <div class="switcher-dropdown">
+                        <a href="../hub/index.html" class="switcher-item">المركز الرئيسي</a>
+                        <a href="../agriculture/index.html" class="switcher-item">الزراعة الذكية</a>
+                        <a href="../real-estate/index.html" class="switcher-item">العقارات</a>
+                        <a href="../legal/index.html" class="switcher-item">الشؤون القانونية</a>
+                    </div>
+                </div>
+                <div class="user-avatar">م</div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Workspace -->
+    <main class="workspace">
+        
+        <!-- Header Actions -->
+        <header class="workspace-header">
+            <div>
+                <h1 class="page-title">نظرة عامة على المبيعات</h1>
+                <p class="subtitle">تتبع أداء المشاريع وتحصيلات الأقساط</p>
+            </div>
+            <button class="btn-primary">
+                <span>+</span> إضافة وحدة جديدة
+            </button>
+        </header>
+
+        <!-- Trend Stats -->
+        <div class="stats-row">
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span class="stat-label">المبيعات الإجمالية (الشهر)</span>
+                </div>
+                <div class="stat-body">
+                    <span class="stat-value"><bdi>8,450,000</bdi> ج.م</span>
+                    <span class="trend badge-up">↑ 5.2%</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span class="stat-label">الوحدات المباعة</span>
+                </div>
+                <div class="stat-body">
+                    <span class="stat-value"><bdi>14</bdi> وحدة</span>
+                    <span class="trend badge-up">↑ 2</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span class="stat-label">أقساط متأخرة</span>
+                </div>
+                <div class="stat-body">
+                    <span class="stat-value text-danger"><bdi>1,250,000</bdi> ج.م</span>
+                    <span class="trend badge-down">↓ -1.5%</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Row -->
+        <div class="charts-row">
+            <div class="chart-box span-2">
+                <h3 class="box-title">حركة المبيعات والتحصيلات</h3>
+                <div class="canvas-container">
+                    <canvas id="salesChart"></canvas>
+                </div>
+            </div>
+            <div class="chart-box">
+                <h3 class="box-title">حالة مخزون الوحدات</h3>
+                <div class="canvas-container">
+                    <canvas id="statusChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Layout Split: Photo Grid & Ledger -->
+        <div class="content-split">
+            
+            <!-- Photo-Centric Unit Cards -->
+            <div class="units-section">
+                <div class="section-header">
+                    <h3 class="box-title">أحدث الوحدات المضافة</h3>
+                    <a href="#" class="view-all">عرض الكل</a>
+                </div>
+                
+                <div class="units-grid">
+                    <!-- Unit 1 -->
+                    <div class="unit-card">
+                        <div class="unit-photo" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=400&q=80')">
+                            <span class="status-badge available">متاح</span>
+                        </div>
+                        <div class="unit-details">
+                            <h4 class="unit-code"><bdi>V-102</bdi> | مشروع الواحة</h4>
+                            <p class="unit-specs">فيلا مستقلة • <bdi>350</bdi> م²</p>
+                            <div class="unit-price"><bdi>12,000,000</bdi> ج.م</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Unit 2 -->
+                    <div class="unit-card">
+                        <div class="unit-photo" style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=400&q=80')">
+                            <span class="status-badge reserved">محجوز</span>
+                        </div>
+                        <div class="unit-details">
+                            <h4 class="unit-code"><bdi>T-45</bdi> | التجمع السكني</h4>
+                            <p class="unit-specs">توين هاوس • <bdi>220</bdi> م²</p>
+                            <div class="unit-price"><bdi>8,500,000</bdi> ج.م</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Buyer/Collections Ledger -->
+            <div class="ledger-section">
+                <div class="section-header">
+                    <h3 class="box-title">جدول التحصيلات والأقساط</h3>
+                </div>
+                
+                <div class="table-container">
+                    <table class="ledger-table">
+                        <thead>
+                            <tr>
+                                <th>العميل</th>
+                                <th>الوحدة</th>
+                                <th>المستحق</th>
+                                <th>الحالة</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="client-name">أحمد مصطفى</div>
+                                    <div class="client-phone"><bdi>01001234567</bdi></div>
+                                </td>
+                                <td><bdi>A-103</bdi></td>
+                                <td><strong><bdi>150,000</bdi> ج.م</strong></td>
+                                <td><span class="status-pill paid">تم الدفع</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="client-name">شركة النور</div>
+                                    <div class="client-phone"><bdi>01119876543</bdi></div>
+                                </td>
+                                <td><bdi>B-203</bdi></td>
+                                <td><strong><bdi>450,000</bdi> ج.م</strong></td>
+                                <td><span class="status-pill pending">مستحق قريباً</span></td>
+                            </tr>
+                            <tr class="row-overdue">
+                                <td>
+                                    <div class="client-name">محمود سالم</div>
+                                    <div class="client-phone"><bdi>01223456789</bdi></div>
+                                </td>
+                                <td><bdi>C-12</bdi></td>
+                                <td><strong><bdi>85,000</bdi> ج.م</strong></td>
+                                <td><span class="status-pill overdue">متأخر (14 يوم)</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <!-- Chart Scripts -->
+    <script>
+        Chart.defaults.font.family = "'Cairo', sans-serif";
+        Chart.defaults.color = '#78716C'; // Warm Stone Text
+        
+        // 1. Sales & Collections Bar Chart
+        const salesCtx = document.getElementById('salesChart').getContext('2d');
+        new Chart(salesCtx, {
+            type: 'bar',
+            data: {
+                labels: ['مايو', 'يونيو', 'يوليو', 'أغسطس'],
+                datasets: [
+                    {
+                        label: 'المبيعات الجديدة',
+                        data: [12, 19, 15, 22],
+                        backgroundColor: '#C84B31', // Terracotta
+                        borderRadius: 4
+                    },
+                    {
+                        label: 'التحصيلات الفعلية',
+                        data: [10, 15, 14, 18],
+                        backgroundColor: '#D6D3D1', // Stone gray
+                        borderRadius: 4
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { rtl: true, position: 'top' }
+                },
+                scales: {
+                    y: { beginAtZero: true, grid: { color: '#E7E5E4' } },
+                    x: { grid: { display: false } }
+                }
+            }
+        });
+
+        // 2. Inventory Status Donut
+        const statusCtx = document.getElementById('statusChart').getContext('2d');
+        new Chart(statusCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['متاح', 'محجوز', 'مباع'],
+                datasets: [{
+                    data: [120, 35, 210],
+                    backgroundColor: [
+                        '#4D7C5F', // Muted Sage Green
+                        '#D97706', // Warm Amber
+                        '#78716C'  // Stone Gray
+                    ],
+                    borderWidth: 2,
+                    borderColor: '#FFFFFF'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '65%',
+                plugins: {
+                    legend: { rtl: true, position: 'bottom' }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

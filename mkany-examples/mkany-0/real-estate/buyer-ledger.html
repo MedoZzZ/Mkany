@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كشف حساب: أحمد مصطفى | مكاني العقارية</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Top Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="logo-mark">ع</span>
+                <span class="logo-text">مكاني العقارية</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">لوحة القيادة</a>
+                <a href="#" class="nav-link">المشاريع والوحدات</a>
+                <a href="#" class="nav-link active">العملاء والعقود</a>
+                <a href="#" class="nav-link">الماليات والتحصيل</a>
+            </div>
+            <div class="nav-actions">
+                <div class="global-switcher">
+                    <button class="switcher-btn">
+                        <span class="switcher-icon">⊞</span>
+                        <span class="switcher-text">القطاعات</span>
+                    </button>
+                    <div class="switcher-dropdown">
+                        <a href="../hub/index.html" class="switcher-item">المركز الرئيسي</a>
+                        <a href="../agriculture/index.html" class="switcher-item">الزراعة الذكية</a>
+                        <a href="../real-estate/index.html" class="switcher-item">العقارات</a>
+                        <a href="../legal/index.html" class="switcher-item">الشؤون القانونية</a>
+                    </div>
+                </div>
+                <div class="user-avatar">م</div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="workspace">
+        
+        <!-- Breadcrumbs -->
+        <div class="breadcrumbs">
+            <a href="#" class="crumb-link">العملاء والعقود</a>
+            <span class="crumb-separator">/</span>
+            <a href="unit-detail.html" class="crumb-link">الوحدة <bdi>V-102</bdi></a>
+            <span class="crumb-separator">/</span>
+            <span class="crumb-current">كشف حساب: أحمد مصطفى</span>
+        </div>
+
+        <div class="ledger-header-panel">
+            <div class="client-profile">
+                <div class="client-avatar">أ</div>
+                <div class="client-info-block">
+                    <h1 class="page-title">أحمد مصطفى كامل</h1>
+                    <p class="subtitle">رقم الهاتف: <bdi>01001234567</bdi> • البريد: <bdi>ahmad.m@example.com</bdi></p>
+                </div>
+            </div>
+            <div class="contract-link">
+                <span class="link-label">الوحدة المرتبطة:</span>
+                <a href="unit-detail.html" class="link-target">فيلا مستقلة <bdi>V-102</bdi> (مشروع الواحة)</a>
+            </div>
+        </div>
+
+        <!-- Financial Health Cards -->
+        <div class="stats-row">
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span class="stat-label">إجمالي قيمة التعاقد</span>
+                </div>
+                <div class="stat-body">
+                    <span class="stat-value"><bdi>12,000,000</bdi> ج.م</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span class="stat-label">إجمالي المدفوع</span>
+                </div>
+                <div class="stat-body">
+                    <span class="stat-value"><bdi>1,500,000</bdi> ج.م</span>
+                    <span class="trend badge-up">مقدم + قسطين</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span class="stat-label">المتأخرات الحالية</span>
+                </div>
+                <div class="stat-body">
+                    <span class="stat-value text-danger"><bdi>150,000</bdi> ج.م</span>
+                    <button class="btn-danger-outline">إرسال إنذار الدفع</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Timeline / Ledger Table -->
+        <div class="ledger-section">
+            <div class="section-header">
+                <h3 class="box-title">جدول الدفعات (<bdi>72</bdi> قسط)</h3>
+                <div class="table-actions">
+                    <button class="btn-secondary">تحميل كشف حساب PDF</button>
+                    <button class="btn-primary">تسجيل دفعة جديدة</button>
+                </div>
+            </div>
+            
+            <div class="table-container">
+                <table class="ledger-table dense-table">
+                    <thead>
+                        <tr>
+                            <th>رقم الدفعة</th>
+                            <th>تاريخ الاستحقاق</th>
+                            <th>تاريخ الدفع الفعلي</th>
+                            <th>القيمة (ج.م)</th>
+                            <th>الحالة</th>
+                            <th>الإجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Downpayment -->
+                        <tr>
+                            <td><strong>دفعة الحجز (المقدم)</strong></td>
+                            <td><bdi>12 مايو 2026</bdi></td>
+                            <td><bdi>12 مايو 2026</bdi></td>
+                            <td><bdi>1,200,000</bdi></td>
+                            <td><span class="status-pill paid">تم الدفع</span></td>
+                            <td><a href="#" class="action-link">إيصال #1042</a></td>
+                        </tr>
+                        
+                        <!-- Paid Installments -->
+                        <tr>
+                            <td>القسط الأول (<bdi>1/72</bdi>)</td>
+                            <td><bdi>12 يونيو 2026</bdi></td>
+                            <td><bdi>10 يونيو 2026</bdi></td>
+                            <td><bdi>150,000</bdi></td>
+                            <td><span class="status-pill paid">تم الدفع</span></td>
+                            <td><a href="#" class="action-link">إيصال #1150</a></td>
+                        </tr>
+                        <tr>
+                            <td>القسط الثاني (<bdi>2/72</bdi>)</td>
+                            <td><bdi>12 يوليو 2026</bdi></td>
+                            <td><bdi>12 يوليو 2026</bdi></td>
+                            <td><bdi>150,000</bdi></td>
+                            <td><span class="status-pill paid">تم الدفع</span></td>
+                            <td><a href="#" class="action-link">إيصال #1290</a></td>
+                        </tr>
+
+                        <!-- Overdue Installment -->
+                        <tr class="row-overdue">
+                            <td>القسط الثالث (<bdi>3/72</bdi>)</td>
+                            <td><bdi>12 أغسطس 2026</bdi></td>
+                            <td>--</td>
+                            <td><strong><bdi>150,000</bdi></strong></td>
+                            <td><span class="status-pill overdue">متأخر (10 أيام)</span></td>
+                            <td><button class="action-btn-danger">تسجيل تحصيل</button></td>
+                        </tr>
+
+                        <!-- Upcoming Installment -->
+                        <tr>
+                            <td>القسط الرابع (<bdi>4/72</bdi>)</td>
+                            <td><bdi>12 سبتمبر 2026</bdi></td>
+                            <td>--</td>
+                            <td><bdi>150,000</bdi></td>
+                            <td><span class="status-pill pending">مستحق قريباً</span></td>
+                            <td>--</td>
+                        </tr>
+                        
+                        <!-- Future Installment -->
+                        <tr class="row-future">
+                            <td>القسط الخامس (<bdi>5/72</bdi>)</td>
+                            <td><bdi>12 أكتوبر 2026</bdi></td>
+                            <td>--</td>
+                            <td><bdi>150,000</bdi></td>
+                            <td><span class="status-pill future">غير مستحق</span></td>
+                            <td>--</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+</html>

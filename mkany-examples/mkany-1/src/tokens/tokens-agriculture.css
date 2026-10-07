@@ -1,0 +1,54 @@
+.theme-agriculture {
+  /* Base & Backgrounds */
+  --color-bg-app: #111111;
+  --color-bg-alt: #FFFFFF;
+  
+  /* Live Tile Colors */
+  --color-tile-temp: #E51400;
+  --color-tile-humidity: #1BA1E2;
+  --color-tile-growth: #8CBF26;
+  --color-tile-warning: #F09609;
+  --color-tile-neutral: #333333;
+  --color-tile-disabled: #555555;
+  --color-brand-action: #1BA1E2;
+  
+  /* Text & Contrast */
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #999999;
+  --color-text-inverse: #000000;
+  
+  /* Overlays */
+  --color-overlay-hover: rgba(255, 255, 255, 0.15);
+  --color-overlay-pressed: rgba(0, 0, 0, 0.2);
+  
+  /* Typography */
+  --font-family-primary: "Almarai", "Segoe UI", "Segoe UI Variable", "Open Sans", sans-serif;
+  --font-family-mono: "JetBrains Mono", monospace;
+  
+  --font-size-hero: 48px; /* Assuming 48px base, could be 72px */
+  --font-size-header: 24px;
+  --font-size-body: 14px;
+  --font-size-caption: 11px;
+  
+  /* Spacing */
+  --space-grid-gap: 8px;
+  --space-tile-padding: 16px;
+  --space-page-margin: 48px;
+  
+  /* Elevation & Borders */
+  --border-radius-base: 0px;
+  --border-width-base: 0px;
+  --border-width-thin: 2px;
+  --border-width-thick: 4px;
+  --shadow-base: none;
+  
+  /* Scale */
+  --scale-hover: 0.98;
+  --scale-pressed: 0.95;
+
+  /* App overrides */
+  background-color: var(--color-bg-app);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-primary);
+  min-height: calc(100vh - var(--height-shell-topbar));
+}

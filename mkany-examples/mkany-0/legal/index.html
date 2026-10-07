@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MKANY الشؤون القانونية - اللوحة الرئيسية</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+    <!-- Global Navigation -->
+    <nav class="global-nav">
+        <div class="nav-left">
+            <div class="brand">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="24" height="24" rx="4" fill="#0D7377"/>
+                    <path d="M12 6L18 12L12 18L6 12L12 6Z" fill="#FFFFFF"/>
+                </svg>
+                <span>مكاني</span>
+            </div>
+            <a href="../index.html" class="sector-switcher" style="text-decoration:none; cursor:pointer;">
+                <span>الشؤون القانونية</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </a></div><div class="nav-center">
+            <div class="command-palette">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <span>البحث عن قضية، مستند، أو موكل...</span>
+            </div>
+        </div>
+        
+        <div class="nav-right">
+            <button class="icon-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                <span class="badge-amber">3</span>
+            </button>
+            <div class="avatar">ع</div>
+        </div>
+    </nav>
+
+    <!-- Contextual Sub-Navigation -->
+    <div class="sub-nav">
+        <a href="#" class="sub-nav-link active">نظرة عامة</a>
+        <a href="cases-index.html" class="sub-nav-link">القضايا</a>
+        <a href="#" class="sub-nav-link">المهام</a>
+        <a href="#" class="sub-nav-link">التقويم</a>
+        <a href="#" class="sub-nav-link">المستندات</a>
+        <a href="#" class="sub-nav-link">الفوترة</a>
+    </div>
+
+    <!-- Main Dashboard Container -->
+    <main class="dashboard-container">
+        
+        <!-- KPI Metric Row -->
+        <div class="kpi-row">
+            <div class="kpi-card">
+                <div class="kpi-header">
+                    <span>القضايا النشطة</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                </div>
+                <div class="kpi-value-row">
+                    <span class="kpi-value mono teal">47</span>
+                    <span class="kpi-badge-emerald">+12%</span>
+                </div>
+            </div>
+            
+            <div class="kpi-card">
+                <div class="kpi-header">
+                    <span>المواعيد القادمة</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--semantic-coral)" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                </div>
+                <div class="kpi-value-row">
+                    <span class="kpi-value mono coral">8</span>
+                    <svg width="32" height="32" viewBox="0 0 36 36">
+                        <path stroke-dasharray="80, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="var(--semantic-coral)" stroke-width="4" stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="kpi-header">
+                    <span>الساعات غير المفوترة</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                </div>
+                <div class="kpi-value-row">
+                    <span class="kpi-value mono amber">142.5h</span>
+                    <div style="display:flex; gap:2px; align-items:flex-end; height:24px;">
+                        <div style="width:6px; height:40%; background:var(--warm-amber); border-radius:2px;"></div>
+                        <div style="width:6px; height:70%; background:var(--warm-amber); border-radius:2px;"></div>
+                        <div style="width:6px; height:50%; background:var(--warm-amber); border-radius:2px;"></div>
+                        <div style="width:6px; height:100%; background:var(--warm-amber); border-radius:2px;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="kpi-header">
+                    <span>رصيد الأمانات</span>
+                    <span class="meta-caps">SAR</span>
+                </div>
+                <div class="kpi-value-row">
+                    <span class="kpi-value mono">485,000</span>
+                </div>
+                <div class="progress-bar-bg" style="width: 100%; margin-top: 8px;">
+                    <div class="progress-bar-fill" style="width: 65%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bento Grid -->
+        <div class="bento-grid">
+            
+            <!-- Left Pane (65%) -->
+            <div class="bento-left">
+                <div class="card" style="flex: 1;">
+                    <div class="card-header">
+                        <span class="card-title">صندوق الأولويات (Priority Inbox)</span>
+                        <div style="display:flex; gap:8px;">
+                            <button style="border:1px solid var(--border-subtle); background:transparent; padding:4px 12px; border-radius:4px; font-family:var(--font-arabic);">تصفية</button>
+                        </div>
+                    </div>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 40px;"><input type="checkbox"></th>
+                                <th>القضية</th>
+                                <th>الموكل</th>
+                                <th>المهلة</th>
+                                <th>المكلف</th>
+                                <th>الحالة</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td><a href="case-detail.html" style="color:var(--prussian-navy); font-weight:700;">دعوى بطلان عقد شراكة <span class="mono" style="font-size:0.8rem; color:var(--text-secondary); display:block;">#451/2025</span></a></td>
+                                <td>شركة الأفق للتجارة</td>
+                                <td><span class="mono" style="color:var(--semantic-coral); font-weight:700;">48h</span></td>
+                                <td><div class="avatar-sm">أ</div></td>
+                                <td><span class="status-pill pill-coral">عاجل</span></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td><strong style="color:var(--prussian-navy);">استئناف حكم عمالي</strong><span class="mono" style="font-size:0.8rem; color:var(--text-secondary); display:block;">#1209/2024</span></td>
+                                <td>أحمد محمود</td>
+                                <td><span class="mono">05d</span></td>
+                                <td><div class="avatar-sm" style="background:var(--rich-teal);">م</div></td>
+                                <td><span class="status-pill pill-teal">جاري</span></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td><strong style="color:var(--prussian-navy);">تسجيل علامة تجارية</strong><span class="mono" style="font-size:0.8rem; color:var(--text-secondary); display:block;">#88/2025</span></td>
+                                <td>مجموعة الرواد</td>
+                                <td><span class="mono">12d</span></td>
+                                <td><div class="avatar-sm" style="background:var(--warm-amber); color:var(--prussian-navy);">س</div></td>
+                                <td><span class="status-pill pill-teal">جاري</span></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td><strong style="color:var(--prussian-navy);">تصفية تركة</strong><span class="mono" style="font-size:0.8rem; color:var(--text-secondary); display:block;">#505/2023</span></td>
+                                <td>ورثة محمد صالح</td>
+                                <td><span class="mono" style="color:var(--text-secondary);">--</span></td>
+                                <td><div class="avatar-sm">أ</div></td>
+                                <td><span class="status-pill pill-emerald">مكتمل</span></td>
+                            </tr>
+                             <tr>
+                                <td><input type="checkbox"></td>
+                                <td><strong style="color:var(--prussian-navy);">نزاع عقاري</strong><span class="mono" style="font-size:0.8rem; color:var(--text-secondary); display:block;">#12/2026</span></td>
+                                <td>شركة إعمار المستقبل</td>
+                                <td><span class="mono">02d</span></td>
+                                <td><div class="avatar-sm" style="background:var(--rich-teal);">م</div></td>
+                                <td><span class="status-pill pill-coral">عاجل</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Right Pane (35%) -->
+            <div class="bento-right">
+                
+                <!-- Trust Accounting -->
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">حسابات الأمانات</span>
+                    </div>
+                    <div class="trust-list">
+                        <div class="trust-item">
+                            <div class="trust-label">
+                                <span>شركة الأفق للتجارة</span>
+                                <span class="mono">15,000</span>
+                            </div>
+                            <div class="trust-bar-bg">
+                                <div class="trust-bar-fill" style="width: 25%;"></div>
+                            </div>
+                        </div>
+                        <div class="trust-item">
+                            <div class="trust-label">
+                                <span>مجموعة الرواد</span>
+                                <span class="mono">120,500</span>
+                            </div>
+                            <div class="trust-bar-bg">
+                                <div class="trust-bar-fill" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <div class="trust-item">
+                            <div class="trust-label">
+                                <span>أحمد محمود</span>
+                                <span class="mono" style="color:var(--semantic-coral);">2,400</span>
+                            </div>
+                            <div class="trust-bar-bg">
+                                <div class="trust-bar-fill" style="width: 10%; background:var(--semantic-coral);"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">النشاط الأخير</span>
+                    </div>
+                    <div class="activity-feed">
+                        <div class="activity-item">
+                            <div class="activity-icon">📄</div>
+                            <div class="activity-content">
+                                <span class="activity-text">تم رفع مذكرة الرد النهائية</span>
+                                <span class="activity-time mono">10:45 AM - القضية #451/2025</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon" style="background:rgba(212,168,67,0.2);">⚖️</div>
+                            <div class="activity-content">
+                                <span class="activity-text">تحديث موعد الجلسة</span>
+                                <span class="activity-time mono">09:30 AM - القضية #1209/2024</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon" style="background:rgba(13,115,119,0.2);">✉️</div>
+                            <div class="activity-content">
+                                <span class="activity-text">إرسال تقرير للموكل</span>
+                                <span class="activity-time mono">Yesterday - مجموعة الرواد</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Bottom Row (Kanban) -->
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">المهام المعلقة</span>
+            </div>
+            <div style="padding: var(--sp-16);">
+                <div class="kanban-board">
+                    <div class="kanban-col">
+                        <div class="kanban-header">
+                            <span>قيد الانتظار</span>
+                            <span class="badge-amber" style="position:static;">3</span>
+                        </div>
+                        <div class="kanban-card">
+                            <span class="kanban-card-title">صياغة عقد المقاولة</span>
+                            <div class="kanban-card-footer">
+                                <span class="mono">Due: 12 Nov</span>
+                                <div class="avatar-sm">أ</div>
+                            </div>
+                        </div>
+                        <div class="kanban-card">
+                            <span class="kanban-card-title">مراجعة مستندات القضية #88</span>
+                            <div class="kanban-card-footer">
+                                <span class="mono">Due: 14 Nov</span>
+                                <div class="avatar-sm" style="background:var(--rich-teal);">م</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kanban-col">
+                        <div class="kanban-header">
+                            <span>جاري العمل</span>
+                            <span class="badge-amber" style="position:static;">1</span>
+                        </div>
+                        <div class="kanban-card" style="border-left: 3px solid var(--rich-teal);">
+                            <span class="kanban-card-title">إعداد صحيفة الدعوى</span>
+                            <div class="kanban-card-footer">
+                                <span class="mono" style="color:var(--semantic-coral);">Due: Today</span>
+                                <div class="avatar-sm">أ</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kanban-col">
+                        <div class="kanban-header">
+                            <span>للمراجعة</span>
+                            <span class="badge-amber" style="position:static;">2</span>
+                        </div>
+                        <div class="kanban-card" style="border-left: 3px solid var(--warm-amber);">
+                            <span class="kanban-card-title">مسودة اتفاقية التسوية</span>
+                            <div class="kanban-card-footer">
+                                <span class="mono">Ready for review</span>
+                                <div class="avatar-sm" style="background:var(--warm-amber); color:var(--prussian-navy);">س</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+</html>
+

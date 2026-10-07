@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* ==========================================================================
+     GLOBAL TOKENS (Base System)
+     ========================================================================== */
+
+  /* Semantic Colors (Default Dark Theme - Command Center) */
+  --bg-app: #050505;
+  --bg-surface: #111111;
+  --bg-surface-hover: #1A1A1A;
+  --bg-surface-active: #222222;
+  
+  --text-primary: #FFFFFF;
+  --text-secondary: #A0A0A0;
+  --text-tertiary: #666666;
+  
+  --border-subtle: #222222;
+  --border-strong: #333333;
+  --ring: rgba(255, 255, 255, 0.1);
+
+  /* Typography Scales */
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-arabic: 'Cairo', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  --text-xs: 0.75rem; /* 12px */
+  --text-sm: 0.875rem; /* 14px */
+  --text-base: 1rem; /* 16px */
+  --text-lg: 1.125rem; /* 18px */
+  --text-xl: 1.25rem; /* 20px */
+  --text-2xl: 1.5rem; /* 24px */
+  --text-3xl: 1.875rem; /* 30px */
+  --text-4xl: 2.25rem; /* 36px */
+
+  /* Spacing Rhythms (4pt grid) */
+  --space-1: 0.25rem; /* 4px */
+  --space-2: 0.5rem; /* 8px */
+  --space-3: 0.75rem; /* 12px */
+  --space-4: 1rem; /* 16px */
+  --space-6: 1.5rem; /* 24px */
+  --space-8: 2rem; /* 32px */
+  --space-12: 3rem; /* 48px */
+  --space-16: 4rem; /* 64px */
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* Shadows (Smooth Ring system) */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.4), 0 0 0 1px var(--ring);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.4), 0 2px 4px -2px rgba(0,0,0,0.4), 0 0 0 1px var(--ring);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.4), 0 4px 6px -4px rgba(0,0,0,0.4), 0 0 0 1px var(--ring);
+
+  /* Easing */
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+}
+
+/* Light Theme (Command Center & Global Overrides) */
+body.theme-light {
+  --bg-app: #F8FAFC;
+  --bg-surface: #FFFFFF;
+  --bg-surface-hover: #F1F5F9;
+  --bg-surface-active: #E2E8F0;
+  
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-tertiary: #94A3B8;
+  
+  --border-subtle: #E2E8F0;
+  --border-strong: #CBD5E1;
+  --ring: rgba(15, 23, 42, 0.05);
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05), 0 0 0 1px var(--ring);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05), 0 0 0 1px var(--ring);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.05), 0 4px 6px -4px rgba(0,0,0,0.05), 0 0 0 1px var(--ring);
+}
+
+
+/* ==========================================================================
+   MODULE THEMES (Scope Overrides)
+   ========================================================================== */
+
+/* 1. Real Estate (OBSIDIAN GOLD) */
+.theme-real-estate {
+  --bg-app: #0B121C;
+  --bg-surface: #101924;
+  --bg-surface-hover: #152230;
+  --bg-surface-active: #1A2A3C;
+  
+  --border-subtle: #1C2D42;
+  --border-strong: #263C56;
+  --ring: rgba(230, 172, 0, 0.15); /* Gold ring */
+  
+  --accent-color: #E6AC00;
+  --accent-hover: #C99600;
+  --accent-text: #000000;
+  
+  /* Badges (Vibrant against deep navy) */
+  --badge-success-bg: rgba(52, 211, 153, 0.15);
+  --badge-success-text: #34D399;
+  --badge-warning-bg: rgba(251, 191, 36, 0.15);
+  --badge-warning-text: #FBBF24;
+  --badge-danger-bg: rgba(251, 113, 133, 0.15);
+  --badge-danger-text: #FB7185;
+  --badge-info-bg: rgba(56, 189, 248, 0.15);
+  --badge-info-text: #38BDF8;
+}
+
+/* 2. Agriculture (EMERALD LEAF) */
+.theme-agriculture {
+  --bg-app: #0A110E;
+  --bg-surface: #111C18;
+  --bg-surface-hover: #162620;
+  --bg-surface-active: #1C332A;
+  
+  --border-subtle: #1C332A;
+  --border-strong: #244237;
+  --ring: rgba(16, 185, 129, 0.15); /* Emerald ring */
+  
+  --accent-color: #10B981;
+  --accent-hover: #059669;
+  --accent-text: #000000;
+  
+  /* Badges (Vibrant against deep forest) */
+  --badge-success-bg: rgba(16, 185, 129, 0.15);
+  --badge-success-text: #10B981;
+  --badge-warning-bg: rgba(245, 158, 11, 0.15);
+  --badge-warning-text: #F59E0B;
+  --badge-danger-bg: rgba(239, 68, 68, 0.15);
+  --badge-danger-text: #EF4444;
+  --badge-info-bg: rgba(14, 165, 233, 0.15);
+  --badge-info-text: #0EA5E9;
+}
+
+/* Light Theme Real Estate Overrides */
+body.theme-light .theme-real-estate {
+  --bg-app: #FDFDFD;
+  --bg-surface: #FFFFFF;
+  --bg-surface-hover: #F8FAFC;
+  --bg-surface-active: #F1F5F9;
+  
+  --border-subtle: #F1F5F9;
+  --border-strong: #E2E8F0;
+  --ring: rgba(230, 172, 0, 0.1);
+  
+  --accent-color: #B8860B; /* Darker gold for light mode text legibility */
+  --accent-hover: #9B700A;
+  --accent-text: #FFFFFF;
+  
+  /* Badges (Vibrant against white) */
+  --badge-success-bg: #ECFDF5;
+  --badge-success-text: #059669;
+  --badge-warning-bg: #FFFBEB;
+  --badge-warning-text: #D97706;
+  --badge-danger-bg: #FEF2F2;
+  --badge-danger-text: #DC2626;
+  --badge-info-bg: #F0F9FF;
+  --badge-info-text: #0284C7;
+}
+
+/* Light Theme Agriculture Overrides */
+body.theme-light .theme-agriculture {
+  --bg-app: #FAFAF9;
+  --bg-surface: #FFFFFF;
+  --bg-surface-hover: #F1F5F9;
+  --bg-surface-active: #E2E8F0;
+  
+  --border-subtle: #F1F5F9;
+  --border-strong: #E2E8F0;
+  --ring: rgba(16, 185, 129, 0.1);
+  
+  --accent-color: #059669; /* Darker emerald */
+  --accent-hover: #047857;
+  --accent-text: #FFFFFF;
+  
+  /* Badges (Vibrant against white) */
+  --badge-success-bg: #ECFDF5;
+  --badge-success-text: #059669;
+  --badge-warning-bg: #FFFBEB;
+  --badge-warning-text: #D97706;
+  --badge-danger-bg: #FEF2F2;
+  --badge-danger-text: #DC2626;
+  --badge-info-bg: #F0F9FF;
+  --badge-info-text: #0284C7;
+}
+
+/* ==========================================================================
+   CSS RESET & FOUNDATION
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-arabic);
+  font-size: var(--text-base);
+  color: var(--text-primary);
+  background-color: var(--bg-app);
+  line-height: 1.5;
+  direction: rtl;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography Utilities */
+.font-sans { font-family: var(--font-sans); }
+.font-arabic { font-family: var(--font-arabic); }
+.font-mono { font-family: var(--font-mono); }
+.tabular-nums { font-variant-numeric: tabular-nums; }
+
+/* Text Colors */
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-tertiary { color: var(--text-tertiary); }
+.text-accent { color: var(--accent-color); }
+
+/* Layout Primitives */
+.flex { display: flex; }
+.flex-col { display: flex; flex-direction: column; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.gap-2 { gap: var(--space-2); }
+.gap-4 { gap: var(--space-4); }
+.gap-6 { gap: var(--space-6); }
+
+/* Common Base App Container */
+.app-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--bg-app);
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}

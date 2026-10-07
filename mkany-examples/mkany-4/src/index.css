@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-cairo: 'Cairo', system-ui, -apple-system, sans-serif;
+    --font-inter: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-plex: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+    --font-syne: 'Syne', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-cairo);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@keyframes agAlarmPulse {
+  0%, 100% {
+    border-color: #D32F2F;
+    background-color: #FFEBEE;
+  }
+  50% {
+    border-color: #EF5350;
+    background-color: #FFCDD2;
+  }
+}
+
+.animate-ag-alarm-pulse {
+  animation: agAlarmPulse 1.5s ease-in-out infinite;
+}
+
+/* Custom font utilities */
+.font-cairo {
+  font-family: var(--font-cairo);
+}
+
+.font-inter {
+  font-family: var(--font-inter);
+}
+
+.font-plex {
+  font-family: var(--font-plex);
+}
+
+.font-syne {
+  font-family: var(--font-syne);
+}
+
+.font-mono-numbers {
+  font-family: var(--font-mono);
+  font-feature-settings: "tnum";
+  direction: ltr;
+  text-align: right;
+}
+
+.font-mono-code {
+  font-family: var(--font-mono);
+  direction: ltr;
+}
+
+td.font-mono-numbers,
+td.font-mono-code,
+th.font-mono-numbers,
+th.font-mono-code {
+  display: table-cell !important;
+}
+

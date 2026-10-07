@@ -1,0 +1,139 @@
+.container {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card Base */
+.card {
+  background-color: var(--color-bg-surface);
+  border: var(--border-width-thin) solid var(--color-border-divider);
+  border-radius: var(--border-radius-base);
+  padding: var(--space-md);
+}
+
+.recordHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-md);
+}
+
+.recordTitle {
+  font-size: var(--font-size-heading-lg);
+  font-weight: 300;
+  margin: 0;
+}
+
+.recordSubtitle {
+  font-size: var(--font-size-body);
+  color: var(--color-text-label);
+}
+
+/* Pathway (Chevrons) */
+.pathContainer {
+  display: flex;
+  width: 100%;
+  margin-bottom: var(--space-md);
+}
+
+.pathStep {
+  flex: 1;
+  text-align: center;
+  padding: var(--space-sm) 0;
+  background-color: var(--color-bg-canvas);
+  border: var(--border-width-thin) solid var(--color-border-divider);
+  margin-inline-end: -1px; /* Overlap borders */
+  font-size: var(--font-size-label);
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--color-text-label);
+  position: relative;
+}
+
+.pathStep.active {
+  background-color: var(--color-brand-primary);
+  color: var(--color-bg-surface);
+  border-color: var(--color-brand-primary);
+  z-index: 1;
+}
+
+.pathStep.completed {
+  background-color: var(--color-status-sold-bg);
+  color: var(--color-bg-surface);
+  border-color: var(--color-status-sold-bg);
+  z-index: 1;
+}
+
+/* Grid for 2-column */
+.recordGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.recordDetail {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xxs);
+}
+
+.label {
+  font-size: var(--font-size-label);
+  color: var(--color-text-label);
+  text-transform: uppercase;
+}
+
+.value {
+  font-size: var(--font-size-body);
+  color: var(--color-text-default);
+  font-weight: bold;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  border-bottom: var(--border-width-thick) solid var(--color-border-divider);
+  margin-bottom: var(--space-md);
+}
+
+.tab {
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--font-size-body);
+  color: var(--color-text-label);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px; /* Overlap the thick border */
+}
+
+.tab.active {
+  color: var(--color-text-default);
+  font-weight: bold;
+  border-bottom-color: var(--color-brand-primary);
+}
+
+/* Table */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  padding: var(--space-sm) var(--space-md);
+  text-align: start;
+  border-bottom: var(--border-width-thin) solid var(--color-border-divider);
+}
+
+.table th {
+  font-size: var(--font-size-label);
+  color: var(--color-text-label);
+  text-transform: uppercase;
+}
+
+.table tbody tr:hover {
+  background-color: var(--color-bg-canvas);
+}

@@ -1,0 +1,13 @@
+@import './tokens/global-tokens.css';
+@import './tokens/tokens-agriculture.css';
+@import './tokens/tokens-legal.css';
+@import './tokens/tokens-real-estate.css';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}

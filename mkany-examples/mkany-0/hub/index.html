@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مكاني | مركز العمليات الرئيسي</title>
+    
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="app-layout">
+        
+        <!-- Top Navbar (Replaces Sidebar) -->
+        <nav class="hub-navbar">
+            <div class="nav-container">
+                <div class="brand-section">
+                    <div class="brand-logo">م</div>
+                    <h1 class="brand-text">مجموعة مكاني</h1>
+                    
+                    <div class="global-switcher">
+                        <button class="switcher-btn">
+                            <span class="switcher-icon">⊞</span>
+                            <span class="switcher-text">القطاعات</span>
+                        </button>
+                        <div class="switcher-dropdown">
+                            <a href="../hub/index.html" class="switcher-item">المركز الرئيسي</a>
+                            <a href="../agriculture/index.html" class="switcher-item">الزراعة الذكية</a>
+                            <a href="../real-estate/index.html" class="switcher-item">العقارات</a>
+                            <a href="../legal/index.html" class="switcher-item">الشؤون القانونية</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="nav-links">
+                    <a href="#" class="nav-item active">المركز الرئيسي</a>
+                    <a href="#" class="nav-item">الإعدادات الشاملة</a>
+                    <a href="#" class="nav-item">الصلاحيات</a>
+                </div>
+                
+                <div class="user-card">
+                    <div class="user-info">
+                        <span class="user-name">المدير التنفيذي</span>
+                        <span class="user-role">المالك</span>
+                    </div>
+                    <div class="user-avatar">ع</div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content Area: The Company Switcher -->
+        <main class="main-content">
+            
+            <header class="hub-header">
+                <h2>بوابة الدخول الموحدة</h2>
+                <p class="subtitle">اختر القطاع للوصول إلى العمليات التشغيلية</p>
+            </header>
+
+            <!-- The 3 Core Projects (Clickable Portals) -->
+            <div class="portals-grid">
+                
+                <a href="#" class="portal-card">
+                    <div class="portal-header">
+                        <span class="portal-number">٠١</span>
+                        <h3 class="portal-title">الزراعة الذكية</h3>
+                    </div>
+                    <p class="portal-desc">إدارة الصوب والمحاصيل</p>
+                    <div class="portal-action">دخول ←</div>
+                </a>
+
+                <a href="../real-estate/index.html" class="portal-card">
+                    <div class="portal-header">
+                        <span class="portal-number">٠٢</span>
+                        <h3 class="portal-title">العقارات</h3>
+                    </div>
+                    <p class="portal-desc">إدارة المبيعات والمخزون</p>
+                    <div class="portal-action">دخول ←</div>
+                </a>
+
+                <a href="#" class="portal-card">
+                    <div class="portal-header">
+                        <span class="portal-number">٠٣</span>
+                        <h3 class="portal-title">الشؤون القانونية</h3>
+                    </div>
+                    <p class="portal-desc">القضايا والجلسات</p>
+                    <div class="portal-action">دخول ←</div>
+                </a>
+
+            </div>
+
+            <hr class="section-divider">
+
+            <!-- High-level Group Stats -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h4 class="stat-title">إجمالي إيرادات المجموعة</h4>
+                    <div class="stat-value"><bdi>124,500,000</bdi> ج.م</div>
+                    <div class="stat-trend trend-up">
+                        <span class="trend-icon">↑</span>
+                        <span class="trend-val"><bdi>14.2%</bdi> عن الشهر السابق</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <h4 class="stat-title">حجم العقود النشطة</h4>
+                    <div class="stat-value"><bdi>3,200,000</bdi> ج.م</div>
+                    <div class="stat-trend trend-down">
+                        <span class="trend-icon">↓</span>
+                        <span class="trend-val"><bdi>-1.5%</bdi> عن الشهر السابق</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Group Charts -->
+            <div class="charts-grid">
+                <!-- Revenue Line Chart -->
+                <div class="chart-card span-2">
+                    <h4 class="chart-title">اتجاه الإيرادات السنوية للمجموعة</h4>
+                    <div class="chart-container">
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Sector Breakdown Donut -->
+                <div class="chart-card">
+                    <h4 class="chart-title">التوزيع الاستثماري للقطاعات</h4>
+                    <div class="chart-container">
+                        <canvas id="sectorChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Chart.js Initialization -->
+    <script>
+        Chart.defaults.font.family = "'Cairo', sans-serif";
+        Chart.defaults.color = '#64748B'; 
+        
+        // Revenue Line Chart
+        const revCtx = document.getElementById('revenueChart').getContext('2d');
+        new Chart(revCtx, {
+            type: 'line',
+            data: {
+                labels: ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو'],
+                datasets: [{
+                    label: 'إجمالي الإيرادات (مليون ج.م)',
+                    data: [85, 92, 88, 105, 110, 118, 124.5],
+                    borderColor: '#1E3A8A', 
+                    backgroundColor: 'rgba(30, 58, 138, 0.1)',
+                    borderWidth: 3,
+                    tension: 0.4, 
+                    fill: true,
+                    pointBackgroundColor: '#FFFFFF',
+                    pointBorderColor: '#1E3A8A',
+                    pointRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { beginAtZero: true, grid: { color: '#F1F5F9' } },
+                    x: { grid: { display: false } }
+                }
+            }
+        });
+
+        // Sector Breakdown Donut Chart
+        const secCtx = document.getElementById('sectorChart').getContext('2d');
+        new Chart(secCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['العقارات', 'الزراعة', 'أخرى'],
+                datasets: [{
+                    data: [65, 25, 10],
+                    backgroundColor: [
+                        '#1E3A8A', 
+                        '#3B82F6', 
+                        '#94A3B8'  
+                    ],
+                    borderWidth: 0,
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '70%',
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        rtl: true,
+                        labels: { font: { family: "'Cairo', sans-serif", size: 13 } }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سجل القضايا - LegalFlow ERP</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body style="background-color: var(--ivory-canvas);">
+
+    <!-- Global Navigation -->
+    <nav class="global-nav">
+        <div class="nav-left">
+            <div class="brand">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="24" height="24" rx="0" fill="#0D7377"/>
+                    <path d="M12 6L18 12L12 18L6 12L12 6Z" fill="#FFFFFF"/>
+                </svg>
+                <span>LegalFlow ERP</span>
+            </div>
+            <a href="../index.html" class="sector-switcher" style="text-decoration:none; cursor:pointer;">
+                <span>الشؤون القانونية</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </a></div><div class="nav-center">
+            <div class="command-palette">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <span>بحث (Ctrl+K)...</span>
+            </div>
+        </div>
+        
+        <div class="nav-right">
+            <div class="avatar">ع</div>
+        </div>
+    </nav>
+
+    <!-- Contextual Sub-Navigation -->
+    <div class="sub-nav" style="border-bottom: 1px solid var(--border-strong);">
+        <a href="index.html" class="sub-nav-link">نظرة عامة</a>
+        <a href="cases-index.html" class="sub-nav-link active">سجل القضايا</a>
+        <a href="#" class="sub-nav-link">المهام</a>
+        <a href="#" class="sub-nav-link">المستندات</a>
+        <a href="#" class="sub-nav-link">الفوترة</a>
+    </div>
+
+    <!-- Main Content: Full-Width Roster -->
+    <main class="roster-container">
+        
+        <div class="roster-header-bar">
+            <div>
+                <h1 style="font-size: 1.8rem; font-weight: 800; color: var(--prussian-navy);">دليل الدعاوى القضائية</h1>
+                <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 4px;">إجمالي السجلات: 1,240 | عرض 1-50</p>
+            </div>
+            <div class="roster-filters">
+                <select class="filter-select">
+                    <option>الحالة: الكل</option>
+                    <option>عاجل</option>
+                    <option>قيد المحاكمة</option>
+                    <option>مغلقة</option>
+                </select>
+                <select class="filter-select">
+                    <option>المحكمة: الكل</option>
+                    <option>الاستئناف العالي</option>
+                    <option>العمالية</option>
+                    <option>الإدارية</option>
+                </select>
+                <button class="btn-primary" style="padding: var(--sp-8) var(--sp-16);">+ قيد دعوى جديدة</button>
+            </div>
+        </div>
+
+        <div class="data-table-wrapper">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th style="width: 40px; text-align: center;"><input type="checkbox"></th>
+                        <th>رقم القضية</th>
+                        <th>اسم القضية</th>
+                        <th>الموكل</th>
+                        <th>موعد الجلسة القادمة</th>
+                        <th>الخصم</th>
+                        <th>رصيد الأمانات</th>
+                        <th>الحالة</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr onclick="window.location='case-detail.html'" style="cursor: pointer;">
+                        <td style="text-align: center;"><input type="checkbox"></td>
+                        <td class="mono" style="font-weight: 700;">451/2025</td>
+                        <td>
+                            <div style="font-weight: 800;">دعوى بطلان عقد شراكة</div>
+                            <div class="meta-caps" style="color: var(--text-secondary); font-size: 0.75rem; margin-top: 2px;">تجاري — الدائرة ٤</div>
+                        </td>
+                        <td>أحمد محمود</td>
+                        <td class="mono">2025-11-10</td>
+                        <td>شركة الأفق للتجارة</td>
+                        <td class="mono teal" style="font-weight: 700;">22,550 <span class="meta-caps">SAR</span></td>
+                        <td><span class="status-pill pill-coral">عاجل (48h)</span></td>
+                    </tr>
+
+                    <tr class="row-alt">
+                        <td style="text-align: center;"><input type="checkbox"></td>
+                        <td class="mono">1209/2024</td>
+                        <td>
+                            <div style="font-weight: 800;">دعوى فصل تعسفي</div>
+                            <div class="meta-caps" style="color: var(--text-secondary); font-size: 0.75rem; margin-top: 2px;">عمالي — الدائرة ٢</div>
+                        </td>
+                        <td>سالم الدوسري</td>
+                        <td class="mono">2025-11-15</td>
+                        <td>شركة المدار</td>
+                        <td class="mono" style="color: var(--text-secondary);">4,000 <span class="meta-caps">SAR</span></td>
+                        <td><span class="status-pill" style="background: var(--lavender-mist); color: var(--prussian-navy);">جاري</span></td>
+                    </tr>
+
+                    <tr>
+                        <td style="text-align: center;"><input type="checkbox"></td>
+                        <td class="mono">78/2026</td>
+                        <td>
+                            <div style="font-weight: 800;">طعن ضريبي</div>
+                            <div class="meta-caps" style="color: var(--text-secondary); font-size: 0.75rem; margin-top: 2px;">إداري — الدائرة ١</div>
+                        </td>
+                        <td>مؤسسة البناء</td>
+                        <td class="mono">2025-11-20</td>
+                        <td>هيئة الزكاة والدخل</td>
+                        <td class="mono teal" style="font-weight: 700;">150,000 <span class="meta-caps">SAR</span></td>
+                        <td><span class="status-pill" style="background: var(--lavender-mist); color: var(--prussian-navy);">جاري</span></td>
+                    </tr>
+
+                    <tr class="row-alt">
+                        <td style="text-align: center;"><input type="checkbox"></td>
+                        <td class="mono">302/2025</td>
+                        <td>
+                            <div style="font-weight: 800;">تنفيذ سند لأمر</div>
+                            <div class="meta-caps" style="color: var(--text-secondary); font-size: 0.75rem; margin-top: 2px;">تنفيذ — محكمة التنفيذ</div>
+                        </td>
+                        <td>البنك الوطني</td>
+                        <td class="mono">--</td>
+                        <td>مؤسسة الرواد</td>
+                        <td class="mono" style="color: var(--text-secondary);">0 <span class="meta-caps">SAR</span></td>
+                        <td><span class="status-pill pill-emerald">مكتمل</span></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pagination-bar">
+            <div style="font-size: 0.9rem; font-weight: 600; color: var(--text-secondary);">عرض 1 إلى 50 من 1,240</div>
+            <div style="display: flex; gap: var(--sp-8);">
+                <button class="btn-secondary" disabled>السابق</button>
+                <button class="btn-secondary">التالي</button>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+</html>
+

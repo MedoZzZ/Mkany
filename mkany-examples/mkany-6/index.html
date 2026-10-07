@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MKANY — نظام إدارة الأعمال</title>
+  <meta name="description" content="MKANY ERP — نظام التشغيل المؤسسي لمجموعة مكاني. إدارة العقارات والشؤون القانونية والزراعة الذكية.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400&family=Syne:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shell.css">
+</head>
+<body>
+
+  <!-- Header — quiet, borderless, brand mark + user info -->
+  <header class="shell-header" id="shell-header">
+    <div class="shell-header-inner">
+      <div class="shell-brand" id="shell-brand">
+        <span class="shell-brand-mark">MKANY</span>
+      </div>
+      <div class="shell-user" id="shell-user">
+        <span class="shell-user-name">أحمد محمد</span>
+        <div class="shell-user-avatar" id="shell-user-avatar">أ</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main content — centered, vertically balanced -->
+  <main class="shell-main" id="shell-main">
+    <div class="shell-content">
+
+      <!-- Greeting -->
+      <h1 class="shell-greeting" id="shell-greeting">مرحباً، أحمد</h1>
+
+      <!-- Command palette search bar -->
+      <div class="shell-search-wrapper" id="shell-search-wrapper">
+        <div class="shell-search" id="shell-search">
+          <svg class="shell-search-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" fill="currentColor"/>
+          </svg>
+          <input
+            type="text"
+            class="shell-search-input"
+            id="shell-search-input"
+            placeholder="ابحث في المشاريع، العملاء، القضايا..."
+            autocomplete="off"
+            aria-label="بحث سريع"
+          >
+          <kbd class="shell-search-kbd" id="shell-search-kbd">Ctrl+K</kbd>
+        </div>
+      </div>
+
+      <!-- Project cards grid — exactly 3 cards -->
+      <div class="shell-cards" id="shell-cards">
+
+        <!-- Real Estate -->
+        <a href="#real-estate" class="shell-card" id="card-real-estate" data-subsystem="real-estate">
+          <div class="shell-card-icon" style="--card-accent: #0070D2; --card-bg: #EBF5FF;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 21h18"/>
+              <path d="M5 21V7l8-4v18"/>
+              <path d="M19 21V11l-6-4"/>
+              <path d="M9 9v.01"/>
+              <path d="M9 12v.01"/>
+              <path d="M9 15v.01"/>
+              <path d="M9 18v.01"/>
+            </svg>
+          </div>
+          <div class="shell-card-content">
+            <h2 class="shell-card-title">العقارات</h2>
+            <p class="shell-card-desc">إدارة المشاريع، الوحدات، العقود والأقساط</p>
+          </div>
+        </a>
+
+        <!-- Legal -->
+        <a href="#legal" class="shell-card" id="card-legal" data-subsystem="legal">
+          <div class="shell-card-icon" style="--card-accent: #393939; --card-bg: #F4F4F4;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3v18"/>
+              <rect x="4" y="7" width="16" height="2" rx="0.5"/>
+              <path d="M7.5 9l-1 6h-2"/>
+              <path d="M16.5 9l1 6h2"/>
+              <path d="M4.5 15h3"/>
+              <path d="M16.5 15h3"/>
+            </svg>
+          </div>
+          <div class="shell-card-content">
+            <h2 class="shell-card-title">الشؤون القانونية</h2>
+            <p class="shell-card-desc">إدارة القضايا، الجلسات، المواعيد والمستندات</p>
+          </div>
+        </a>
+
+        <!-- Agriculture -->
+        <a href="#agriculture" class="shell-card" id="card-agriculture" data-subsystem="agriculture">
+          <div class="shell-card-icon" style="--card-accent: #00897B; --card-bg: #E0F2F1;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M7 20h10"/>
+              <path d="M10 20c5.5-2.5 8-7 8-12"/>
+              <path d="M9.286 14.286c-.5-3.5 1.5-7 5.714-9.286"/>
+              <path d="M5 20c1-4.5 3.5-8 8-11"/>
+            </svg>
+          </div>
+          <div class="shell-card-content">
+            <h2 class="shell-card-title">الزراعة الذكية</h2>
+            <p class="shell-card-desc">إدارة الصوب، دورات المحاصيل والمراقبة البيئية</p>
+          </div>
+        </a>
+
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>

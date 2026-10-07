@@ -1,0 +1,144 @@
+/* Agriculture Dashboard (EMERALD LEAF) */
+
+/* The sidebar and topbar share structure with Real Estate, so we can reuse classes from there or redefine them here if needed.
+   Since this is a mockup, I will redefine the specific layout for Agriculture to ensure complete independence. */
+
+.page-wrapper-agri {
+  padding: var(--space-8) var(--space-12);
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.agri-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: var(--space-8);
+}
+
+.agri-title {
+  font-family: var(--font-arabic);
+  font-size: var(--text-3xl);
+  font-weight: 800;
+  margin-bottom: var(--space-1);
+}
+
+.agri-subtitle {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+}
+
+/* Master Health Widget (Hero) */
+.agri-health-widget {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-6) var(--space-8);
+  margin-bottom: var(--space-6);
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, transparent 100%);
+  border: 1px solid var(--border-subtle);
+}
+
+.health-status {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.health-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-full);
+  background-color: var(--accent-color);
+  color: var(--bg-app);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.health-text h2 {
+  font-size: var(--text-xl);
+  font-weight: 800;
+  color: var(--accent-color);
+}
+.health-text p {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+}
+
+/* Bento Grid */
+.agri-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+.sensor-card {
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+}
+
+.sensor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-6);
+}
+
+.sensor-label {
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.sensor-value-wrapper {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+}
+
+.sensor-value {
+  font-size: var(--text-4xl);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.sensor-unit {
+  font-size: var(--text-lg);
+  color: var(--text-tertiary);
+  font-weight: 500;
+}
+
+/* Action Button specific for Agri */
+.btn-agri-action {
+  width: 100%;
+  justify-content: space-between;
+}
+
+/* Data Table Overrides */
+.agri-table-wrapper {
+  overflow: hidden;
+}
+
+.zone-name {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-weight: 700;
+}
+
+.zone-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.dot-healthy { background-color: var(--badge-success-text); }
+.dot-warning { background-color: var(--badge-warning-text); }
+.dot-danger { background-color: var(--badge-danger-text); }

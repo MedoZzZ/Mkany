@@ -1,0 +1,7 @@
+{
+  "name": "MKANY ERP",
+  "description": "نظام تخطيط موارد المؤسسة لمجموعة مكاني - إدارة العقارات، الشؤون القانونية، والزراعة الذكية",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

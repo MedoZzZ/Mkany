@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل الدعوى - LegalFlow ERP</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body style="background-color: var(--ivory-canvas);">
+
+    <!-- Global Navigation -->
+    <nav class="global-nav">
+        <div class="nav-left">
+            <div class="brand">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="24" height="24" rx="0" fill="#0D7377"/>
+                    <path d="M12 6L18 12L12 18L6 12L12 6Z" fill="#FFFFFF"/>
+                </svg>
+                <span>LegalFlow ERP</span>
+            </div>
+            <a href="../index.html" class="sector-switcher" style="text-decoration:none; cursor:pointer;">
+                <span>الشؤون القانونية</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </a></div><div class="nav-center">
+            <div class="command-palette">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <span>بحث (Ctrl+K)...</span>
+            </div>
+        </div>
+        
+        <div class="nav-right">
+            <div class="avatar">ع</div>
+        </div>
+    </nav>
+
+    <!-- Contextual Sub-Navigation -->
+    <div class="sub-nav">
+        <a href="cases-index.html" class="sub-nav-link" style="color: var(--text-secondary); display: flex; align-items: center; gap: 4px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            عودة للسجل
+        </a>
+        <a href="#" class="sub-nav-link active">نظرة عامة</a>
+        <a href="#" class="sub-nav-link">السجل الإجرائي</a>
+        <a href="#" class="sub-nav-link">المستندات</a>
+        <a href="#" class="sub-nav-link">المالية</a>
+    </div>
+
+    <div class="workspace-sticky-header">
+        <div style="display: flex; flex-direction: column; gap: var(--sp-8);">
+            <div style="display: flex; gap: var(--sp-12); align-items: center;">
+                <span class="mono" style="font-size: 1.1rem; font-weight: 700; color: var(--text-secondary);">ID: 451/2025</span>
+                <span class="meta-caps" style="background: var(--ivory-canvas); padding: 2px 8px; border: 1px solid var(--border-strong); color: var(--prussian-navy);">المحكمة: الدائرة ٤</span>
+            </div>
+            <h1 style="font-size: 2.2rem; font-weight: 800; line-height: 1.2; color: var(--prussian-navy);">دعوى بطلان عقد شراكة</h1>
+        </div>
+        
+        <div style="display: flex; flex-direction: column; align-items: flex-end; gap: var(--sp-12);">
+            <div class="status-pill pill-coral" style="padding: var(--sp-8) var(--sp-16); font-size: 0.9rem;">
+                موعد نهائي عاجل (٤٨ ساعة)
+            </div>
+            <div style="display: flex; gap: var(--sp-8);">
+                <button class="btn-secondary">إضافة إجراء</button>
+                <button class="btn-primary">إرفاق مستند</button>
+            </div>
+        </div>
+    </div>
+
+    <main class="workspace-container">
+        <div class="workspace-grid">
+            
+            <!-- Column 1: Quick Facts & Parties -->
+            <div style="display: flex; flex-direction: column; gap: var(--sp-24);">
+                
+                <div class="card" style="background: #FFF; border: 1px solid var(--border-strong);">
+                    <div class="card-header" style="border-bottom: 1px solid var(--border-strong);">
+                        <span class="card-title">بيانات القضية والأطراف</span>
+                    </div>
+                    <div style="padding: var(--sp-16); display: flex; flex-direction: column; gap: var(--sp-16);">
+                        
+                        <div>
+                            <div class="meta-caps" style="color: var(--text-secondary);">تاريخ القيد</div>
+                            <div class="mono" style="font-size: 1rem; font-weight: 600; margin-top: 4px;">2025-01-15</div>
+                        </div>
+                        
+                        <div>
+                            <div class="meta-caps" style="color: var(--text-secondary);">نوع الدعوى</div>
+                            <div style="font-weight: 700; color: var(--prussian-navy); margin-top: 4px;">تجاري</div>
+                        </div>
+
+                        <hr style="border: 0; border-top: 1px solid var(--border-subtle);">
+                        
+                        <div>
+                            <div class="meta-caps" style="color: var(--text-secondary); margin-bottom: var(--sp-8);">المدعي (الموكل)</div>
+                            <div style="display: flex; align-items: center; gap: var(--sp-12);">
+                                <div class="avatar" style="background-color: var(--prussian-navy); color: #FFF; width: 32px; height: 32px; font-size: 0.9rem;">أ</div>
+                                <div style="font-weight: 700; font-size: 0.9rem;">أحمد محمود</div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="meta-caps" style="color: var(--text-secondary); margin-bottom: var(--sp-8);">المدعى عليه (الخصم)</div>
+                            <div style="display: flex; align-items: center; gap: var(--sp-12);">
+                                <div class="avatar" style="background-color: var(--lavender-mist); color: var(--prussian-navy); width: 32px; height: 32px; font-size: 0.9rem;">ش</div>
+                                <div style="font-weight: 700; font-size: 0.9rem;">شركة النور للتجارة</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Column 2: Procedural Timeline -->
+            <div class="card" style="background: #FFF; border: 1px solid var(--border-strong); height: 100%;">
+                <div class="card-header" style="border-bottom: 1px solid var(--border-strong);">
+                    <span class="card-title">السجل الإجرائي</span>
+                </div>
+                
+                <div style="padding: var(--sp-24);">
+                    <div class="timeline-track">
+                        
+                        <div class="timeline-node node-active">
+                            <div class="mono" style="font-size: 0.85rem; color: var(--text-secondary);">2025-02-01</div>
+                            <div style="font-weight: 800; color: var(--prussian-navy); margin-top: 2px;">تقديم المذكرة الجوابية</div>
+                            <div style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 4px;">مطلوب إيداع المذكرة الختامية للرد على دفوع الخصم.</div>
+                        </div>
+
+                        <div class="timeline-node">
+                            <div class="mono" style="font-size: 0.85rem; color: var(--text-secondary);">2025-01-28</div>
+                            <div style="font-weight: 800; color: var(--prussian-navy); margin-top: 2px;">الجلسة الأولى</div>
+                            <div style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 4px;">تم حضور المحامي أحمد صبري، وتأجيل الدعوى للاطلاع.</div>
+                            <div style="margin-top: var(--sp-12);">
+                                <button class="doc-chip">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                    محضر_الجلسة.pdf
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="timeline-node">
+                            <div class="mono" style="font-size: 0.85rem; color: var(--text-secondary);">2025-01-15</div>
+                            <div style="font-weight: 800; color: var(--prussian-navy); margin-top: 2px;">قيد صحيفة الدعوى</div>
+                            <div style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 4px;">تسجيل الدعوى لدى المحكمة التجارية واستلام إيصال الرسوم.</div>
+                            <div style="margin-top: var(--sp-12);">
+                                <button class="doc-chip">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                    صحيفة_الدعوى.pdf
+                                </button>
+                                <button class="doc-chip">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                    إيصال_السداد.pdf
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column 3: Financials & Tasks -->
+            <div style="display: flex; flex-direction: column; gap: var(--sp-24);">
+                
+                <div class="card" style="background: #FFF; border: 1px solid var(--border-strong);">
+                    <div class="card-header" style="border-bottom: 1px solid var(--border-strong);">
+                        <span class="card-title">المالية والمهام</span>
+                    </div>
+                    
+                    <div style="padding: var(--sp-16); border-bottom: 1px solid var(--border-subtle);">
+                        <div class="meta-caps" style="color: var(--text-secondary); margin-bottom: var(--sp-8);">رصيد الأمانات المتاح</div>
+                        <div class="mono" style="font-size: 1.6rem; font-weight: 700; color: var(--amber);">22,550 <span style="font-size: 1rem;">SAR</span></div>
+                        
+                        <div style="margin-top: var(--sp-16);">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                                <span style="font-size: 0.8rem; font-weight: 600; color: var(--text-secondary);">استهلاك الرصيد</span>
+                                <span class="mono" style="font-size: 0.8rem; font-weight: 700;">35%</span>
+                            </div>
+                            <div style="height: 6px; background: var(--ivory-canvas); border: 1px solid var(--border-subtle); width: 100%;">
+                                <div style="height: 100%; background: var(--amber); width: 35%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="padding: var(--sp-16); border-bottom: 1px solid var(--border-subtle);">
+                        <div class="meta-caps" style="color: var(--text-secondary); margin-bottom: var(--sp-8);">المصروفات الفعلية</div>
+                        <div class="mono" style="font-size: 1.2rem; font-weight: 700; color: var(--prussian-navy);">12,500 <span style="font-size: 0.9rem;">SAR</span></div>
+                    </div>
+
+                    <div style="padding: var(--sp-16);">
+                        <div class="meta-caps" style="color: var(--text-secondary); margin-bottom: var(--sp-12);">مهام قيد الانتظار</div>
+                        <div style="display: flex; flex-direction: column; gap: var(--sp-8);">
+                            <label style="display: flex; align-items: center; gap: var(--sp-8); font-size: 0.9rem; font-weight: 600; cursor: pointer;">
+                                <input type="checkbox" style="width: 16px; height: 16px;">
+                                مراجعة مسودة العقد
+                            </label>
+                            <label style="display: flex; align-items: center; gap: var(--sp-8); font-size: 0.9rem; font-weight: 600; cursor: pointer;">
+                                <input type="checkbox" style="width: 16px; height: 16px;">
+                                توقيع الوكالة الشرعية
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>
+

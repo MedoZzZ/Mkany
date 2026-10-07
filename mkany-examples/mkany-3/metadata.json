@@ -1,0 +1,6 @@
+{
+  "name": "MKANY ERP",
+  "description": "Enterprise resource planning front-end shell featuring dedicated Agriculture, Real Estate, and Legal workspaces governed by strict design tokens.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

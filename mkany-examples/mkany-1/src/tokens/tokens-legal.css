@@ -1,0 +1,66 @@
+.theme-legal {
+  /* Base & Layout */
+  --color-bg-body: #ECF0F5;
+  --color-overlay-scrim: rgba(0, 0, 0, 0.5);
+  --color-header-bg: #001F3F;
+  --color-header-hover: rgba(0, 0, 0, 0.1);
+  --color-header-text: #FFFFFF;
+  --color-sidebar-bg: #222D32;
+  --color-sidebar-bg-nested: #2C3B41;
+  --color-sidebar-text: #B8C7CE;
+  
+  /* Surface & Borders */
+  --color-panel-bg: #FFFFFF;
+  --color-panel-border: #D2D6DE;
+  --color-table-stripe: #F9F9F9;
+  --color-table-hover: #F5F5F5;
+  --color-input-border: #CCCCCC;
+  --color-input-disabled: #EEEEEE;
+  
+  /* Text, Brand & Status */
+  --color-text-main: #333333;
+  --color-brand-primary: #3C8DBC;
+  --color-brand-hover: #367FA9;
+  --color-widget-tools: #97A0B3;
+  --color-status-danger: #DD4B39;
+  --color-status-warning: #F39C12;
+  --color-status-success: #00A65A;
+  --color-status-info: #00C0EF;
+  
+  /* Callout Tints */
+  --color-callout-bg-danger: #F2DEDE;
+  --color-callout-bg-warning: #FCF8E3;
+  --color-callout-bg-success: #DFF0D8;
+  --color-callout-bg-info: #D9EDF7;
+  
+  /* Typography */
+  --font-family-base: "Cairo", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-family-serif: "Georgia", "Times New Roman", serif;
+  --font-size-base: 14px;
+  --font-size-h1: 24px;
+  --font-size-sm: 12px;
+  --line-height-base: 1.42857143;
+  
+  /* Spacing */
+  --space-panel-padding: 10px;
+  --space-table-cell: 8px;
+  --space-margin-bottom: 15px;
+  
+  /* Elevation & Borders */
+  --border-radius-base: 3px;
+  --border-radius-panel: 3px;
+  --border-radius-badge: 10px;
+  --border-panel-top: 3px solid #D2D6DE;
+  --border-width-callout: 5px;
+  --shadow-box: 0 1px 1px rgba(0,0,0,0.1);
+  --shadow-modal: 0 5px 15px rgba(0,0,0,0.5);
+  --shadow-input-focus: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  --shadow-input-error: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 6px #CE8483;
+
+  /* App overrides */
+  background-color: var(--color-bg-body);
+  color: var(--color-text-main);
+  font-family: var(--font-family-base);
+  line-height: var(--line-height-base);
+  min-height: calc(100vh - var(--height-shell-topbar));
+}

@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+:root {
+  /* =========================================================================
+     MKANY ERP HUB DESIGN TOKENS (Premium Command Center)
+     ========================================================================= */
+  --hub-bg: #F4F5F0;
+  --hub-surface: #FFFFFF;
+  --hub-text-primary: #0B1B2B;
+  --hub-text-muted: #5A6B7C;
+  --hub-accent: #E6AC00;
+  --radius-hub-card: 24px;
+  --shadow-hub-card: 0 24px 48px rgba(11, 27, 43, 0.08);
+
+  /* =========================================================================
+     SMART AGRICULTURE DESIGN TOKENS (Grounded & Tactile Farm Tool)
+     ========================================================================= */
+  --ag-bg: #EBE8DF;
+  --ag-surface: #F6F5F0;
+  --ag-primary: #3A7D44;
+  --ag-border: #D6D2C4;
+  --ag-accent-sun: #E5A93D;
+  --ag-text: #2D3D33;
+  --ag-danger: #C13A3A;
+  --radius-ag-card: 16px;
+  --radius-ag-button: 100px;
+  --shadow-ag: none;
+
+  /* =========================================================================
+     REAL ESTATE DESIGN TOKENS (Editorial Gallery & Architectural Frames)
+     ========================================================================= */
+  --re-bg: #FDFBF7;
+  --re-surface: #FFFFFF;
+  --re-primary: #1A1E23;
+  --re-border: #EAE6DF;
+  --re-accent: #C86A4C;
+  --re-text: #4A4B50;
+  --re-success: #2D7A5D;
+  --radius-re-card: 4px;
+  --shadow-re-card: 0 12px 40px rgba(0, 0, 0, 0.04);
+
+  /* =========================================================================
+     LEGAL SERVICES DESIGN TOKENS (Authoritative, Rigid & Document-Centric)
+     ========================================================================= */
+  --legal-bg: #F3F4F6;
+  --legal-surface: #FFFFFF;
+  --legal-primary: #0B1B2B;
+  --legal-border: #9CA3AF;
+  --legal-accent: #8B1E1E;
+  --legal-text: #111827;
+  --radius-legal: 0px;
+  --shadow-legal: none;
+}
+
+/* Font Families mapped to token definitions */
+.font-hub-ar {
+  font-family: 'Cairo', system-ui, sans-serif;
+}
+.font-hub-lat {
+  font-family: 'Syne', system-ui, sans-serif;
+}
+
+.font-ag-ui {
+  font-family: 'Readex Pro', system-ui, sans-serif;
+}
+
+.font-re-ar {
+  font-family: 'Tajawal', system-ui, sans-serif;
+}
+.font-re-display {
+  font-family: 'Playfair Display', serif;
+}
+.font-re-latin {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.font-legal-ar {
+  font-family: 'Alexandria', system-ui, sans-serif;
+}
+.font-legal-doc {
+  font-family: 'Noto Naskh Arabic', 'Noto Serif', serif;
+}
+.font-legal-latin {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.font-mono-data {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Base Financial & Monospace formatting */
+.financial-figure {
+  font-family: 'JetBrains Mono', monospace;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  direction: ltr;
+  display: inline-block;
+}
+
+[dir="rtl"] .financial-figure {
+  text-align: right;
+  direction: ltr;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+

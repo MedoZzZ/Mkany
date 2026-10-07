@@ -1,0 +1,59 @@
+.theme-real-estate {
+  /* Base & Backgrounds */
+  --color-bg-canvas: #F4F6F9;
+  --color-bg-surface: #FFFFFF;
+  --color-bg-header: #FFFFFF;
+  --color-bg-disabled: #C9C7C5;
+  --color-overlay-scrim: rgba(8, 7, 7, 0.6);
+  
+  /* Brand & Interactive */
+  --color-brand-primary: #0070D2;
+  --color-brand-hover: #005FB2;
+  --color-brand-active: #00396B;
+  
+  /* Borders */
+  --color-border-divider: #DDDBDA;
+  --color-border-input: #B0ADAB;
+  
+  /* Text & Hierarchy */
+  --color-text-default: #080707;
+  --color-text-label: #3E3E3C;
+  --color-text-placeholder: #706E6B;
+  
+  /* Semantic */
+  --color-status-sold-bg: #04844B;
+  --color-status-reserved-bg: #FFB75D;
+  --color-status-available-bg: #0070D2;
+  --color-status-blocked-bg: #C23934;
+  --color-status-blocked-hover: #A61A14;
+  
+  /* Typography */
+  --font-family-sans: "IBM Plex Sans Arabic", "Salesforce Sans", Helvetica, Arial, sans-serif;
+  --font-family-mono: "Consolas", "Courier New", monospace;
+  --font-size-heading-lg: 1.5rem; /* 24px */
+  --font-size-heading-sm: 1rem; /* 16px */
+  --font-size-body: 0.875rem; /* 14px */
+  --font-size-label: 0.75rem; /* 12px */
+  
+  /* Spacing */
+  --space-xxs: 0.125rem;
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  
+  /* Elevation & Borders */
+  --border-radius-base: 0.25rem;
+  --border-radius-pill: 15rem;
+  --border-width-thin: 1px;
+  --border-width-thick: 2px;
+  --shadow-card: none;
+  --shadow-dropdown: 0 2px 3px 0 rgba(0, 0, 0, 0.16);
+  --shadow-focus: 0 0 3px var(--color-brand-primary);
+
+  /* App overrides */
+  background-color: var(--color-bg-canvas);
+  color: var(--color-text-default);
+  font-family: var(--font-family-sans);
+  min-height: calc(100vh - var(--height-shell-topbar));
+}

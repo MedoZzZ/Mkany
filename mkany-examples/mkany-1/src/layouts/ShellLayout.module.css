@@ -1,0 +1,147 @@
+.shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--color-shell-bg-landing);
+}
+
+.topbar {
+  height: var(--height-shell-topbar);
+  background-color: var(--color-shell-topbar-bg);
+  border-bottom: var(--border-bottom-topbar);
+  display: flex;
+  align-items: center;
+  padding: 0 var(--space-shell-px);
+  position: relative;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: var(--font-size-shell-title);
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-shell-px);
+}
+
+.iconButton {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-shell-icon-on-dark);
+}
+
+.iconButton:hover {
+  color: var(--color-shell-icon-hover);
+}
+
+.iconButton svg {
+  width: var(--size-shell-icon);
+  height: var(--size-shell-icon);
+}
+
+/* Waffle Dropdown */
+.dropdown {
+  position: absolute;
+  top: var(--height-shell-topbar);
+  right: var(--space-shell-px);
+  width: var(--width-switcher-dropdown);
+  background: var(--color-shell-switcher-bg);
+  border-radius: var(--border-radius-shell-dropdown);
+  box-shadow: var(--shadow-shell-dropdown);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 16px;
+  gap: 8px;
+}
+
+.appItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 8px;
+  text-decoration: none;
+  color: #333;
+  border-radius: 4px;
+  transition: background-color 0.15s;
+}
+
+.appItem:hover {
+  background-color: var(--color-shell-app-hover);
+}
+
+.appIcon {
+  color: var(--color-shell-icon-on-light);
+  transition: color 0.1s;
+}
+
+.appItem:hover[data-app="agriculture"] .appIcon {
+  color: #8CBF26;
+}
+
+.appItem:hover[data-app="legal"] .appIcon {
+  color: #001F3F;
+}
+
+.appItem:hover[data-app="real-estate"] .appIcon {
+  color: #0070D2;
+}
+
+.appLabel {
+  font-size: var(--font-size-shell-app-label);
+}
+
+/* Anchor Line */
+.anchorLine {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  transition: background-color 0.2s ease-in-out;
+  z-index: 1001;
+}
+
+/* Progress Bar */
+.progressBarWrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  overflow: hidden;
+  z-index: 1002;
+}
+
+.progressBar {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 30%;
+  animation: indeterminate 0.6s infinite linear;
+}
+
+@keyframes indeterminate {
+  0% { left: -35%; }
+  100% { left: 100%; }
+}
+
+.content {
+  flex: 1;
+  position: relative;
+}
